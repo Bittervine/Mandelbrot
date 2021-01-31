@@ -380,14 +380,9 @@ function init()
 setInterval(myTimer,100);
 
 // Let page load and then actually do init once document layout is complete...
-var prev_handler = window.onload;
 window.onload = () =>
 {
     setTimeout(init,100); 
-    if (prev_handler) 
-    {
-        prev_handler();
-    }     
 }
 
   
