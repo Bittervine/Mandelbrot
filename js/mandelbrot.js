@@ -380,7 +380,7 @@ function init()
 setInterval(myTimer,100);
 
 // Let page load and then actually do init once document layout is complete...
-windows.onload = () =>
+window.onload = () =>
 {
     if ('serviceWorker' in navigator) 
     {
