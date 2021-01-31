@@ -1,10 +1,9 @@
 
 var cacheName = 'mandelbrot-pwa';
-var filesToCache = [
-  '/',
-  '/index.html',
-  '/css/style.css',  
-  '/js/mandelbrot.js'
+var filesToCache = [  
+  './index.html',
+  './css/style.css',  
+  './js/mandelbrot.js'
 ];
 
 /* Start the service worker and cache all of the app's content */
