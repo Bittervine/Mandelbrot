@@ -398,13 +398,14 @@
         canvas1.onmousecancel = onCanvas1MouseCancel;
         window.onresize = onResize;
    
+        onResize();
+
+        'use strict';
         if ('serviceWorker' in navigator) 
         {
             navigator.serviceWorker.register('./sw.js');
         }
-   
-        onResize();
-        
+
     }
     
     setInterval(myTimer,100);

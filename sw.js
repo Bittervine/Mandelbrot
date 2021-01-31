@@ -1,5 +1,5 @@
 
-var cacheName = 'hello-pwa';
+var cacheName = 'mandelbrot-pwa';
 var filesToCache = [
   '/',
   '/index.html',
