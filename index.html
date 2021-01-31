@@ -14,5 +14,19 @@
   </div>
 </body>
 <script src="js/mandelbrot.js"></script>
+<script>
+var prev_handler = window.onload;
+window.onload = () =>
+{
+    if ('serviceWorker' in navigator) 
+    {
+        navigator.serviceWorker.register('./sw.js');
+    } 
+    if (prev_handler) 
+    {
+        prev_handler();
+    }    
+}
+</script>
 </body>
 </html>
