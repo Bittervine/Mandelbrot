@@ -123,11 +123,6 @@ function getMousePos(canvas, evt)
 
 /* Misc */
 
-function onLoaded(f)
-{
-    window.onload = function(){ setTimeout(f,100); };        
-}
-
 function setPixel(imageData, x, y, r, g, b, a) 
 {
     index = (x + y * imageData.width) * 4;
@@ -369,13 +364,7 @@ function onResize()
 
 
 function init() 
-{   
-    'use strict';
-    if ('serviceWorker' in navigator) 
-    {            
-        navigator.serviceWorker.register('./sw.js');            
-    }
-                
+{                   
     // Covert 'touch' event into 'mouse' event (for phones and pads)
     mapTouchToMouse(canvas1);
     
@@ -391,5 +380,13 @@ function init()
 setInterval(myTimer,100);
 
 // Let page load and then actually do init once document layout is complete...
-onLoaded(init);
+windows.onload = () =>
+{
+    if ('serviceWorker' in navigator) 
+    {
+        navigator.serviceWorker.register('./sw.js');
+    }
+    setTimeout(init,100); 
+}
+
   
